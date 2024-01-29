@@ -6,42 +6,163 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/harol/ontologies/2024/0/oid.owl">
-    <Prefix name="" IRI="http://www.semanticweb.org/harol/ontologies/2024/0/oid.owl/"/>
+    <Prefix name="" IRI="http://www.semanticweb.org/harol/ontologies/2024/0/oid.owl"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Import>http://purl.obolibrary.org/obo/bfo/2019-08-26/bfo.owl</Import>
     <Import>http://purl.obolibrary.org/obo/iao/2022-11-07/iao.owl</Import>
     <Import>http://www.ontology-of-units-of-measure.org/resource/om-2</Import>
+    <Import>https://spec.industrialontologies.org/ontology/202301/core/Core/</Import>
     <Declaration>
-        <Class IRI="#communication_protocol"/>
+        <Class IRI="#gateway_device"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#iot_device"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#link"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#messaging_protocol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#network"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#network_device"/>
     </Declaration>
     <Declaration>
         <Class IRI="#protocol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#reciever"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sender"/>
     </Declaration>
     <SubClassOf>
-        <Class IRI="#communication_protocol"/>
+        <Class IRI="#gateway_device"/>
+        <Class IRI="#network_device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#iot_device"/>
+        <Class IRI="#network_device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#link"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#link"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000081"/>
+            <Class IRI="#gateway_device"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#messaging_protocol"/>
         <Class IRI="#protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#network"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000027"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#network"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000051"/>
+            <Class IRI="#network_device"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#network_device"/>
+        <Class IRI="https://spec.industrialontologies.org/ontology/core/Core/MaterialArtifact"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#protocol"/>
         <Class IRI="http://purl.obolibrary.org/obo/IAO_0000104"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#reciever"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#reciever"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000081"/>
+            <Class IRI="#iot_device"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sender"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sender"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000081"/>
+            <Class IRI="#iot_device"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#gateway_device"/>
+        <Class IRI="#iot_device"/>
+    </DisjointClasses>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#communication_protocol</IRI>
-        <Literal xml:lang="en">communication protocol</Literal>
+        <IRI>#gateway_device</IRI>
+        <Literal>gateway device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#iot_device</IRI>
+        <Literal>IOT device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#link</IRI>
+        <Literal>link</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#messaging_protocol</IRI>
+        <Literal xml:lang="en">messaging protocol</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#network</IRI>
+        <Literal>network</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000600"/>
+        <IRI>#network_device</IRI>
+        <Literal>A network device is any device with the physical components necessary to connect to a network</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#network_device</IRI>
+        <Literal>network device</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#protocol</IRI>
         <Literal xml:lang="en">protocol</Literal>
     </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#reciever</IRI>
+        <Literal>reciever</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#sender</IRI>
+        <Literal>sender</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
 
-<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 
