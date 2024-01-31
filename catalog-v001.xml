@@ -3,7 +3,7 @@
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2020/notime/bfo.owl" uri="https://raw.githubusercontent.com/BFO-ontology/BFO-2020/master/src/owl/profiles/atemporal/bfo-2020-without-some-all-times.owl"/>
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/ro/releases/2023-08-18/ro.owl" uri="https://raw.githubusercontent.com/oborel/obo-relations/master/ro.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1706711837491" name="http://purl.obolibrary.org/obo/iao.owl" uri="iao.owx"/>
-        <uri id="Automatically generated entry, Timestamp=1706711837491" name="http://www.semanticweb.org/haroldo-rafael/oid.owl" uri="oid.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1706735073250" name="http://purl.obolibrary.org/obo/iao.owl" uri="iao.owx"/>
+        <uri id="Automatically generated entry, Timestamp=1706735073250" name="http://www.semanticweb.org/haroldo-rafael/oid.owl" uri="oid.owl"/>
     </group>
 </catalog>
