@@ -368,6 +368,15 @@
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000030"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#actuator"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#writes_to"/>
+            </ObjectInverseOf>
+            <Class IRI="#internet_of_things_device"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#analog_liquid_level_sensor"/>
         <Class IRI="http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#liquid_level_sensor"/>
     </SubClassOf>
@@ -398,6 +407,15 @@
     <SubClassOf>
         <Class IRI="http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#sensor"/>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000030"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#sensor"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#reads_from"/>
+            </ObjectInverseOf>
+            <Class IRI="#internet_of_things_device"/>
+        </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#tank"/>
@@ -512,6 +530,21 @@
         <ObjectProperty IRI="#deployed_at_upper_level"/>
     </DisjointObjectProperties>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#communicates_with</IRI>
+        <Literal>The relation that indicates there is an established communication, regulated by a common communication protocol, between two network devices. This relation indicates a network device capable of starting a partial messaging event with the other network device.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>#communicates_with</IRI>
+        <IRI>#communicates_with</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#communicates_with</IRI>
+        <Literal>communicates with</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
         <IRI>#communication_protocol</IRI>
         <Literal>MQTT, OPC UA, DDS</Literal>
@@ -538,6 +571,76 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#communication_role</IRI>
+        <Literal>A role of a participant of a messaging process related to the capability of communicating over a network.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>#communication_role</IRI>
+        <IRI>#communication_role</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#communication_role</IRI>
+        <Literal>communication role</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#deployed_at</IRI>
+        <Literal>A relation that indicates a sensor has a deployment relating to a tank. A deployment may indicate where and how the sensor was installed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#deployed_at</IRI>
+        <Literal>deployed at</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#deployed_at_lower_level</IRI>
+        <Literal>A  relation that specifies a sensor is deployed at a position considered logically as a low level.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>#deployed_at_lower_level</IRI>
+        <IRI>#deployed_at_lower_level</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#deployed_at_lower_level</IRI>
+        <Literal>deployed at lower level</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#deployed_at_upper_level</IRI>
+        <Literal>A  relation that specifies a sensor is deployed at a position considered logically as a high level.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>#deployed_at_upper_level</IRI>
+        <IRI>#deployed_at_upper_level</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#deployed_at_upper_level</IRI>
+        <Literal>deployed at upper level</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#digital_level_sensor_role</IRI>
+        <Literal>A role of a digital level sensor related to the installation of such sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>#digital_level_sensor_role</IRI>
+        <IRI>#digital_level_sensor_role</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#digital_level_sensor_role</IRI>
+        <Literal>digital level sensor role</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#gateway_device</IRI>
         <Literal>A network device specifically made to intermediate a communication between two other network devices</Literal>
     </AnnotationAssertion>
@@ -553,8 +656,28 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#high_level_sensor_role</IRI>
+        <Literal>A role of a digital level sensor that is installed in the upper half of a tank</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>#high_level_sensor_role</IRI>
+        <IRI>#high_level_sensor_role</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#high_level_sensor_role</IRI>
+        <Literal>high level sensor role</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#internet_of_things_device</IRI>
         <Literal>A network device that is specifically made to inform the measurement of a sensor or to propagate a command to an actuator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000118"/>
+        <IRI>#internet_of_things_device</IRI>
+        <Literal>IOT device</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
@@ -565,6 +688,21 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#internet_of_things_device</IRI>
         <Literal>internet of things device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#link_role</IRI>
+        <Literal>A role of a participant of a messaging process related to the capability of intermediating a communication.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>#link_role</IRI>
+        <IRI>#link_role</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#link_role</IRI>
+        <Literal>link role</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
@@ -580,6 +718,21 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#link_to_reciever_partial_messaging_process</IRI>
         <Literal>link to receiver partial messaging process</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#low_level_sensor_role</IRI>
+        <Literal>A role of a digital level sensor that is installed in the lower half of a tank</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>#low_level_sensor_role</IRI>
+        <IRI>#low_level_sensor_role</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#low_level_sensor_role</IRI>
+        <Literal>low level sensor role</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
@@ -617,6 +770,26 @@
         <Literal>messaging process</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#network</IRI>
+        <Literal>A computer network is a set of computers sharing resources located on or provided by network nodes. Computers use common communication protocols over digital interconnections to communicate with each other. These interconnections are made up of telecommunication network technologies based on physically wired, optical, and wireless radio-frequency methods that may be arranged in a variety of network topologies.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000118"/>
+        <IRI>#network</IRI>
+        <Literal>computer network</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>#network</IRI>
+        <Literal>https://en.wikipedia.org/wiki/Computer_network</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#network</IRI>
+        <Literal>network</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
         <IRI>#network_device</IRI>
         <Literal>a laptop, a smart watch, a router</Literal>
@@ -638,6 +811,66 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#nutritional_solution_module</IRI>
+        <Literal>A system of tanks, actuators and sensors intended for the production of nutritional solution.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>#nutritional_solution_module</IRI>
+        <Literal>Case study discussed during the CMP196 course</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#nutritional_solution_module</IRI>
+        <Literal>nutritional solution module</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#reads_from</IRI>
+        <Literal>Relation that indicates an IOT device recieves measurements data from a sensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>#reads_from</IRI>
+        <IRI>#reads_from</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#reads_from</IRI>
+        <Literal>reads from</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#receiver_role</IRI>
+        <Literal>A role of a participant of a messaging process related to the capability of receiving a message over a network.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>#receiver_role</IRI>
+        <IRI>#link_role</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#receiver_role</IRI>
+        <Literal>receiver role</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#sender_role</IRI>
+        <Literal>A role of a participant of a messaging process related to the capability of sending a message over a network.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>#sender_role</IRI>
+        <IRI>#sender_role</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#sender_role</IRI>
+        <Literal>sender role</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#sender_to_link_partial_messaging_process</IRI>
         <Literal>A partial process of a messaging process. The process in which a message is communicated from a sender to a link , with the intent of reaching a receiver.</Literal>
     </AnnotationAssertion>
@@ -650,6 +883,21 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#sender_to_link_partial_messaging_process</IRI>
         <Literal>sender to link partial messaging process</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#writes_to</IRI>
+        <Literal>Relation that indicates an IOT device is commanding the state of an actuator.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>#writes_to</IRI>
+        <IRI>#writes_to</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#writes_to</IRI>
+        <Literal>writes to</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
@@ -670,6 +918,126 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#actuator</IRI>
         <Literal>actuator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#analog_liquid_level_sensor</IRI>
+        <Literal>A level sensor that outputs a discreet value for the level</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#analog_liquid_level_sensor</IRI>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#analog_liquid_level_sensor</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#analog_liquid_level_sensor</IRI>
+        <Literal>analog liquid level sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#compressor</IRI>
+        <Literal>A compressor is a mechanical device that increases the pressure of a gas by reducing its volume.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#compressor</IRI>
+        <Literal>https://en.wikipedia.org/wiki/Compressor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#compressor</IRI>
+        <Literal>compressor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#digital_liquid_level_sensor</IRI>
+        <Literal>A level sensor that indicates if there is liquid in its installation level</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#digital_liquid_level_sensor</IRI>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#digital_liquid_level_sensor</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#digital_liquid_level_sensor</IRI>
+        <Literal>digital liquid level sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#electrical_conductivity_sensor</IRI>
+        <Literal>An electrical conductivity meter (EC meter) measures the electrical conductivity in a solution.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000118"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#electrical_conductivity_sensor</IRI>
+        <Literal>electrical conductivity meter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#electrical_conductivity_sensor</IRI>
+        <Literal>https://en.wikipedia.org/wiki/Electrical_conductivity_meter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#electrical_conductivity_sensor</IRI>
+        <Literal>electrical conductivity sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#liquid_level_sensor</IRI>
+        <Literal>Level sensors detect the level of liquids and other fluids and fluidized solids, including slurries, granular materials, and powders that exhibit an upper free surface.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000118"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#liquid_level_sensor</IRI>
+        <Literal>level sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#liquid_level_sensor</IRI>
+        <Literal>https://en.wikipedia.org/wiki/Level_sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#liquid_level_sensor</IRI>
+        <Literal>liquid level sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#potential_of_hydrogen_sensor</IRI>
+        <Literal>A pH meter is a scientific instrument that measures the hydrogen-ion activity in water-based solutions, indicating its acidity or alkalinity expressed as pH.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000118"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#potential_of_hydrogen_sensor</IRI>
+        <Literal>pH meter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#potential_of_hydrogen_sensor</IRI>
+        <Literal>https://en.wikipedia.org/wiki/PH_meter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#potential_of_hydrogen_sensor</IRI>
+        <Literal>potential of hydrogen sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#pump</IRI>
+        <Literal>A pump is a device that moves fluids (liquids or gases), or sometimes slurries,[1] by mechanical action, typically converted from electrical energy into hydraulic energy.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#pump</IRI>
+        <Literal>https://en.wikipedia.org/wiki/Pump</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#pump</IRI>
+        <Literal>pump</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
@@ -715,6 +1083,21 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#tank</IRI>
         <Literal>tank</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#valve</IRI>
+        <Literal>A valve is a device or natural object that regulates, directs or controls the flow of a fluid (gases, liquids, fluidized solids, or slurries) by opening, closing, or partially obstructing various passageways.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#valve</IRI>
+        <Literal>https://en.wikipedia.org/wiki/Valve</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/rafae/ontologies/2024/0/untitled-ontology-3#valve</IRI>
+        <Literal>valve</Literal>
     </AnnotationAssertion>
 </Ontology>
 
